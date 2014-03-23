@@ -1,0 +1,123 @@
+apply plugin: 'android-library'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+version = "1.0.0"
+group = "com.bakingcode.io.twitter"
+artifactId = "ara-twitter"
+
+configurations {
+
+    archives {
+        extendsFrom configurations.default
+    }
+
+}
+
+signing {
+    required { has("release") && gradle.taskGraph.hasTask("uploadArchives") }
+    sign configurations.archives
+}
+
+uploadArchives {
+
+    configuration = configurations.archives
+    repositories.mavenDeployer {
+        beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+        repository(url: sonatypeRepo) {
+            authentication(userName: sonatypeUsername,
+                    password: sonatypePassword)
+        }
+
+        pom.project {
+            name 'ara-twitter Library'
+            packaging 'aar'
+            description 'Twitter Rest API 1.1 Consumer for Android'
+            url 'https://github.com/BakingCode/ara-twitter'
+
+            scm {
+                url 'https://github.com/BakingCode/ara-twitter'
+                connection 'scm:git:git://github.com/BakingCode/ara-twitter'
+                developerConnection 'scm:git:git@github.com:BakingCode/ara-twitter'
+            }
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+
+            developers {
+                developer {
+                    id 'panavtec'
+                    name 'Christian Panadero'
+                    email 'panavtec@gmail.com'
+                }
+                developer {
+                    id 'srodrigo'
+                    name 'Sergio Rodrigo'
+                    email 'sergio.rodrigo.royo@gmail.com'
+                }
+            }
+        }
+    }
+}
+
+buildscript{
+
+    repositories{
+        mavenCentral()
+    }
+
+    dependencies{
+        classpath 'com.android.tools.build:gradle:0.9.+'
+    }
+}
+
+repositories{
+    mavenCentral()
+}
+
+dependencies {
+
+    compile 'oauth.signpost:signpost-core:1.2.1.2'
+    compile 'oauth.signpost:signpost-commonshttp4:1.2.1.2'
+    compile 'org.apache.httpcomponents:httpmime:4.2.1'
+
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
+android {
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileSdkVersion 19
+    buildToolsVersion "19.0.3"
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 19
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+
+}
