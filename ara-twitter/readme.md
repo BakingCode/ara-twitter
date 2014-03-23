@@ -1,7 +1,7 @@
 ara-twitter Android
 =================
 
-ara-twitter is a library for consume twitter Rest API 1.1. Actually the library does not implement all the methods, only the most used but is accepting pull requests for complete all the api specification.
+ara-twitter is a library for consuming twitter Rest API 1.1. Actually, the library does not implement all the request methods, only the most used ones, but is accepting pull requests to complete the whole API specification.
 
 
 Using the library
