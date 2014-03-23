@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import static bakingcode.io.twitter.tools.TwitterLogging.LT;
+import static com.bakingcode.io.twitter.tools.TwitterLogging.LT;
 
 /**
  * Api Resource Family representing a resource family of the Twitter API.

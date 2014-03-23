@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static bakingcode.io.twitter.tools.TwitterLogging.LT;
+import static com.bakingcode.io.twitter.tools.TwitterLogging.LT;
 
 /**
  * Describes the place of a coordinate 

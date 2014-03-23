@@ -10,8 +10,8 @@ import java.util.Locale;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import bakingcode.io.twitter.model.ApiResourceFamily.ResourceFamily;
-import bakingcode.io.twitter.tools.Tools;
+import com.bakingcode.io.twitter.model.ApiResourceFamily.ResourceFamily;
+import com.bakingcode.io.twitter.tools.Tools;
 
 /**
  * Api Method representing a method of the Twitter API.
