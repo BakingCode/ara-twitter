@@ -12,6 +12,7 @@ import static com.bakingcode.io.twitter.tools.TwitterLogging.LT;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -177,9 +178,8 @@ public class Tweet implements Serializable {
 			
 		} catch (JSONException e) {
 			LT(TAG, e);
+            return Collections.emptyList();
 		}
-		
-		return null;
 		
 	}
 	
