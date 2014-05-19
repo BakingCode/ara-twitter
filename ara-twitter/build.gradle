@@ -17,9 +17,7 @@ repositories{
 
 dependencies {
 
-    compile 'oauth.signpost:signpost-core:1.2.1.2'
-    compile 'oauth.signpost:signpost-commonshttp4:1.2.1.2'
-    compile 'org.apache.httpcomponents:httpmime:4.2.1'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
 
 }
 
@@ -51,19 +49,5 @@ android {
     }
 
 }
-
-// Thanks to Jake Wharton: 
-// http://stackoverflow.com/questions/19307341/android-library-gradle-release-jar
-// simply run ./gradlew jarRelease
-android.libraryVariants.all { variant -> 
-  def name = variant.buildType.name
-  if (name.equals(com.android.builder.BuilderConstants.DEBUG)) {
-    return; // Skip debug builds. 
-  } 
-  def task = project.tasks.create "jar${name.capitalize()}", Jar
-  task.dependsOn variant.javaCompile
-  task.from variant.javaCompile.destinationDir 
-  artifacts.add('archives', task);
-} 
 
 apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
