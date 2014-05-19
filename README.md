@@ -7,6 +7,18 @@ baking-twitter is a library for consume twitter Rest API 1.1. Actually the libra
 Using the library
 ================
 
+via gradle. Add this to your build.gradle:
+
+    dependencies {  
+        repositories {
+            mavenCentral()
+            maven {
+                url 'https://oss.sonatype.org/content/groups/staging'
+            }
+        }
+        compile 'com.bakingcode.io.twitter:ara-twitter:1.0.2-SNAPSHOT'
+    }
+
 
 Applications using baking-twitter
 ================
