@@ -1,7 +1,7 @@
-baking-twitter Android
+Description
 =================
 
-baking-twitter is a library for consume twitter Rest API 1.1. Actually the library does not implement all the methods, only the most used but is accepting pull requests for complete all the api specification.
+ara-twitter is a library for consume twitter Rest API 1.1. Actually the library does not implement all the methods, only the most used but is accepting pull requests for complete all the api specification.
 
 
 Using the library
@@ -20,7 +20,7 @@ via gradle. Add this to your build.gradle:
     }
 
 
-Applications using baking-twitter
+Applications using ara-twitter
 ================
 
 * [Ararauna Twitter tracker](https://play.google.com/store/apps/details?id=bakingcode.tweedb) by BakingCode
