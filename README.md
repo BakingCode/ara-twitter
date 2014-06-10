@@ -16,7 +16,7 @@ via gradle. Add this to your build.gradle:
                 url 'https://oss.sonatype.org/content/groups/staging'
             }
         }
-        compile 'com.bakingcode.io.twitter:ara-twitter:1.0.2-SNAPSHOT'
+        compile 'com.bakingcode.io.twitter:ara-twitter:1.0.2-SNAPSHOT@aar'
     }
 
 
